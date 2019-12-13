@@ -1,15 +1,16 @@
-function saveToFirebase(email) {
-    var emailObject = {
-        email: email
-    };
+const createMessage = function saveToFirebase(email, message) {
+    var messageObject = {
+        email: email,
+        message: message
+    }
 
-    firebase.database().ref('subscription-entries').push().set(emailObject)
+    firebase.database().ref('clientsMessage').push().set(messageObject)
         .then(function(snapshot) {
-            success(); // some success method
+            console.log("Message sent")
         }, function(error) {
             console.log('error' + error);
-            error(); // some error method
         });
 
-    console.log("Firebase Module Loaded")
 }
+
+

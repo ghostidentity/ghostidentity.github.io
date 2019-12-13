@@ -8,11 +8,7 @@ var firebaseConfig = {
     appId: "1:721725621408:web:5b8da36e09ecef108935c5",
     measurementId: "G-QQTS21BQBZ"
   };
-  // Initialize Firebase
-    var defaultProject =  firebase.initializeApp(firebaseConfig);
+
+    firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
-    console.log(defaultProject.name);
-
-
-    firebase.database().ref('subscription-entries').push().set('test');
