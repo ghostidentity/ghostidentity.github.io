@@ -10,5 +10,6 @@ var firebaseConfig = {
   };
 
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    const analytics = firebase.analytics();
 
+    analytics.logEvent('module loaded')
